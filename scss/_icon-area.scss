@@ -1,0 +1,52 @@
+.icon-area {
+  @include padding-content;
+  @include display-extended(center, center);
+
+  border-collapse: collapse;
+  box-shadow: inset 0 2px 0 0 $icon-area-box-shadow,
+    inset 0 -2px 0 0 $icon-area-box-shadow;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+
+  .icon-item {
+    border-left: 1px solid $li-border-color;
+    border-right: 1px solid $li-border-color;
+    height: 100%;
+    padding: 2.5rem 4rem;
+    text-align: center;
+
+    .icon-item-signature {
+      font-family: "Segoe UI";
+      font-size: 1.7rem;
+      font-weight: 300;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.icon-area::after {
+  background: url("../dist/img/icon-area-section/image-area-pattern.png") repeat;
+  background-size: 6px 6px;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.16;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+@include media-sm {
+  .icon-area {
+    all: unset;
+
+    @include display-flex(row);
+
+    .icon-item {
+      border: 0;
+      width: 33.3%;
+    }
+  }
+}

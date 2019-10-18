@@ -1,0 +1,46 @@
+$primary-text-color: #9b7d08;
+$secondary-text-color: #fff;
+$heading-text-color: #f5c506;
+$advantages-li-color: #a9a9a7;
+
+$li-border-color: rgba(0, 0, 0, 0.1);
+$header-li-box-shadow: rgba(245, 197, 6, 0.27);
+$icon-area-box-shadow: rgba(0, 0, 0, 0.45);
+$footer-box-shadow: rgba(0, 0, 0, 0.75);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin display-flex($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+}
+
+@mixin display-extended($justify-prop, $align-prop) {
+  align-items: $align-prop;
+  display: flex;
+  justify-content: $justify-prop;
+}
+
+@mixin padding-content {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@mixin background-placer($url) {
+  background: url($url), no-repeat, center;
+  background-size: cover;
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin media-sm {
+  @media screen and (min-width: 640px) and (max-width: 1280px) {
+    @content;
+  }
+}

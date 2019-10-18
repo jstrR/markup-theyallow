@@ -1,0 +1,52 @@
+@import "_config.scss";
+@import "_header.scss";
+@import "_icon-area.scss";
+@import "_slider-secondary.scss";
+@import "_advantages-list.scss";
+@import "_footer.scss";
+
+@font-face {
+  font-family: "Segoe WP";
+  src: url("../dist/fonts/segoe-wp/SegoeWP.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Asap";
+  src: url("../dist/fonts/asap/Asap-Regular.otf");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../dist/fonts/pt-sans/PTC55F.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../dist/fonts/open-sans/OpenSans-Regular.ttf") format("truetype");
+}
+
+body {
+  @include display-flex(column);
+  margin: 0 auto;
+  width: 80%;
+}
+
+@include media-sm {
+  body {
+    width: 100%;
+  }
+}
+
+p,
+span,
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.responsive-img {
+  height: auto;
+  max-width: 100%;
+}

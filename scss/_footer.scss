@@ -1,0 +1,26 @@
+footer {
+  @include background-placer(("../dist/img/footer/footerBack.png"));
+  @include padding-content;
+
+  .footer-logo {
+    @include display-extended(flex-start, center);
+
+    margin: 0.3rem 0;
+
+    .footer-heading {
+      color: $secondary-text-color;
+      font-family: "Lucida Sans";
+      font-size: 2rem;
+      font-style: italic;
+      margin-left: 1rem;
+      text-align: center;
+    }
+
+    img {
+      @include background-placer(("../dist/img/commons/logoBack-header.png"));
+
+      max-height: 52px;
+      max-width: 52px;
+    }
+  }
+}

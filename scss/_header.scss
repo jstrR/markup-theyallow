@@ -1,0 +1,204 @@
+header {
+  @include background-placer(("../dist/img/header/headerBackGr.png"));
+  @include padding-content;
+
+  min-height: 560px;
+  padding-bottom: 5rem;
+  padding-top: 6%;
+  position: relative;
+  z-index: 1;
+
+  .wrapper {
+    @include display-flex(row);
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo,
+  nav,
+  nav ul {
+    @include display-extended(space-between, center);
+
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    img {
+      @include background-placer(("../dist/img/commons/logoBack-header.png"));
+      margin-right: 9px;
+    }
+
+    h1 {
+      color: $secondary-text-color;
+      font-family: "Lucida Sans";
+      font-size: 2.5rem;
+      font-style: italic;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  }
+
+  li {
+    @include background-placer(("../dist/img/header/nav-mainBg.png"));
+    @include display-extended(space-around, center);
+
+    border-collapse: collapse;
+    border-right: 1px solid $li-border-color;
+    box-shadow: -4px -5px 0 0 $header-li-box-shadow;
+    color: $primary-text-color;
+    font-family: "Segoe WP";
+    letter-spacing: 0;
+    list-style: none;
+    padding: 0.5rem 0rem;
+    text-align: center;
+
+    .nav-signature {
+      color: $primary-text-color;
+      font-size: 1.1rem;
+      padding-left: 0.5rem;
+      padding-right: 1rem;
+    }
+
+    i {
+      padding-left: 1rem;
+    }
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .main-slider {
+    @include display-extended(space-between, center);
+
+    flex-wrap: wrap;
+    margin-top: 7%;
+    width: 100%;
+
+    .video-frame {
+      position: relative;
+
+      img:nth-child(2) {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+
+      img:last-child {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+
+      :hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .main-slider-heading {
+    color: $secondary-text-color;
+    font-family: "Asap";
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+
+    .heading {
+      color: $heading-text-color;
+    }
+  }
+}
+
+header::after {
+  background: url("../dist/img/header/header-pattern.png") repeat;
+  background-size: 18px 18px;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.16;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+@include media-sm {
+  header {
+    all: unset;
+
+    .wrapper {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      min-height: 60px;
+      width: 100%;
+
+      .logo,
+      nav,
+      nav ul {
+        @include display-extended(flex-start, stretch);
+
+        flex-wrap: nowrap;
+      }
+
+      .logo {
+        @include display-extended(center, center);
+        background-image: linear-gradient(0deg, #000000 0%, #565656 100%);
+        width: 25%;
+
+        img {
+          max-height: 40px;
+          max-width: 40px;
+        }
+
+        h1 {
+          font-size: 1.2rem;
+        }
+      }
+
+      nav {
+        width: 75%;
+      }
+
+      ul {
+        width: 100%;
+      }
+
+      li {
+        box-shadow: none;
+        justify-content: center;
+        width: 100%;
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .main-slider {
+      all: unset;
+
+      .video-frame {
+        width: 100%;
+
+        img:first-child {
+          width: 100%;
+        }
+      }
+
+      .main-slider-heading {
+        display: none;
+      }
+    }
+  }
+
+  header::after {
+    all: unset;
+  }
+}
